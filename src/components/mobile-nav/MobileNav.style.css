@@ -1,0 +1,73 @@
+
+/*============================ HEADER MOBILE NAVIGATION ====================================*/
+
+.header__mobileNav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 88vh;
+    background-color: white;
+    border: 1px solid var(--grey-color);
+    padding-top: 60px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.header__mobileNav  a {
+    padding-left: 40px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 20px;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.header__mobileNav  a:hover {
+    background-color: whitesmoke;
+    font-weight: 500;
+
+}
+
+.header__mobileNav a img {
+    width: 50px;
+    object-fit: contain;
+}
+
+.menu-primary, .menu-secondary {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+/*============================= CSSTransition styles ============================*/
+
+.menu-primary.enter {
+    position: absolute;
+    transform: translateX(-110%);
+}
+.menu-primary.enter-active {
+    transform: translateX(0%) ;
+    transition: all .4s ease ;
+}
+.menu-primary.exit {
+    position: absolute;
+}
+.menu-primary.exit-active {
+    transform: translateX(-110%) ;
+    transition: all .4s ease ;
+}
+
+.menu-secondary.enter {
+    transform: translateX(110%) ;
+}
+.menu-secondary.enter-active {
+    transform: translateX(0%) ;
+    transition: all .4s ease ;
+}
+
+.menu-secondary.exit-active {
+    transform: translateX(110%) ;
+    transition: all .4s ease ;
+}

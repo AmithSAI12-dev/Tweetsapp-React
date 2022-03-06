@@ -1,13 +1,156 @@
-body {
+*,*::before, *::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --grey-color: #e8e8e8;
+  --primary-color: #00aba2;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+
+body {
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+
+}
+
+.container {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*================================== TYPOGRAPHY STYLES ====================================*/
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.title--xl {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 8rem;
+  letter-spacing: -2.25px;
+}
+
+.title--lg {
+  font-size: 40px;
+  letter-spacing: -1.5px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.title--sm {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 28px;   
+}
+
+.title--xs {
+  font-size: 1.2rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/*================================== SPACING STYLES =======================================*/
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-200 {
+  margin-bottom: 200px;
+}
+
+.pt-60 {
+  padding-top: 60px;
+}
+/*================================== RESPONSIVE STYLES ====================================*/
+
+@media only screen and (max-width: 1500px) {
+  .container {
+      width: 90vw;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  html {
+      font-size: 56%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  html {
+      font-size: 50%;
+  }
+  
+}
+
+@media only screen and (max-width: 450px) {
+  html {
+      font-size: 40%;
+  }
 }
