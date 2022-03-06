@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/header/Header.component';
+import Home from './page/home/Home.component';
 import Login from './page/login/Login.component';
 import Register from './page/register/Register.component';
 
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route exact path='/register' element={<Register />} />
+        <Route exact path='/' element={<Home />} /> 
       </Routes>
     </div>
   );

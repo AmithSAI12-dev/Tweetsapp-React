@@ -2,8 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { loginUserStart } from '../../redux/user/user.actions';
-import { selectErrorMessage } from '../../redux/user/user.selector';
+import { selectCurrentUser, selectErrorMessage } from '../../redux/user/user.selector';
 import './Login.style.css';
+import  { Navigate } from 'react-router-dom'
 
 class Login extends React.Component{
 
@@ -22,7 +23,6 @@ class Login extends React.Component{
         const {email, password} = this.state;
         this.setState({ email: '', password: '' });
         loginUserStart(email, password);
-        this.props.history.push("/");
     };
 
     handleChange = event => {
@@ -31,6 +31,10 @@ class Login extends React.Component{
     };
     render() {
         const {errorMessage} = this.props;
+        const {currentUser} = this.props;
+        if(currentUser!=="") {
+            return <Navigate to="/" />
+        }
         return (
             <div className='login'>
                 {/* Background Section */}
@@ -68,6 +72,7 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = createStructuredSelector({
     errorMessage: selectErrorMessage,
+    currentUser: selectCurrentUser
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
