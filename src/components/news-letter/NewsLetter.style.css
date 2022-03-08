@@ -1,0 +1,66 @@
+/*=============================== NEW RELEASE STYLES ====================================*/
+
+.newRelease {
+    position: relative;
+    height: max-content
+}
+
+.newRelease__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.newRelease__btn {
+    align-self: flex-end;
+}
+
+
+/*================================ NEWS LETTER STYLES ===================================*/
+
+.newsLetter {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsLetter > .newsLetter__content {
+    margin-right: 100px;
+}
+
+.newsLetter > .newsLetter__content > h3 {
+    line-height: 80px;
+    margin-top: -18px;
+}
+
+
+.newsLetter > .newsLetter__content > h4 {
+    font-weight: 300;
+}
+
+.newsLetter > .newsLetter__form {
+    display: flex;
+    align-items: center;
+    flex: .7;
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+
+.newsLetter > .newsLetter__form > .newsLetter__input {
+    outline: none;
+    border: none;
+    box-shadow: none; 
+    width: 100%;  
+}
+
+/*============================== RESPONSIVE STYLES ================================*/
+
+@media only screen and (max-width: 990px) {
+    .newsLetter > .newsLetter__content {
+        flex: 1 1 100vw;
+    }
+    .newsLetter > .newsLetter__form { 
+        flex: 1;
+    }
+}

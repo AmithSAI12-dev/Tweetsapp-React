@@ -1,0 +1,128 @@
+.popup {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: black;
+    cursor: pointer;
+}
+
+.popup > svg {
+    width: 30px;
+    height: 30px;
+}
+
+.popup__form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;  /* Negative half of height. */
+    margin-left: -700px;  /* Negative half of width. */
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 864px;
+    margin: 0 auto;
+    padding: 60px 20px 50px 20px;
+    background-color: white;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 13px 26px 0px;
+}
+
+.login__form > * {
+    max-width: 467px;
+    width: 100%;
+    margin: 0 auto;
+    height: 52px;
+}
+
+.login__form > label {
+    font-weight: 900;
+    font-size: 1.4rem;
+    padding: 7px 0;
+}
+
+.login__form > input, .login__form > input:not(:valid) {
+    margin-bottom: 23px;
+    padding: 7px 0;
+    padding-bottom: 16px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-bottom: 1px solid #b6b6b6;
+}
+
+.login__form > button {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all .3s  cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin-bottom: 40px;
+}
+
+.login__form > textarea {
+    padding: 7px 0;
+    padding-bottom: 16px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-bottom: 1px solid #b6b6b6;
+    margin-bottom: 20px;   
+}
+
+.login__form > .error {
+    text-align: center;
+    color: red;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.login__form > .success {
+    text-align: center;
+    color: green;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.login__form > button:hover {
+    background-color: var(--primary-color);
+}
+
+.login__help {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__help > p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    width: max-content;
+}
+
+.login__help > p > a {
+    font-weight: 700;
+    color: black;
+    padding-bottom: 5px;
+    font-size: 12px;
+    letter-spacing: 1.71px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.login__help > p > a::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    display: block;
+    background-color: black;
+}

@@ -1,9 +1,5 @@
 import { userActionTypes } from "./user.types";
 
-export const setCurrentUser = user => ({
-    type: userActionTypes.SET_CURRENT_LOGGEDIN_USER,
-    payload: user
-});
 
 export const registerUserStart = (userObject) => ({
     type: userActionTypes.REGISTER_USER_START,

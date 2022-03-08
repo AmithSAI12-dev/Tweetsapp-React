@@ -1,0 +1,61 @@
+.customBtn, .customBtn:link, .customBtn:visited {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    overflow: hidden;
+    position: relative;
+    padding-right: 70px;
+    padding-left: 0px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.customBtn::before, .customBtn::after {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background-color: currentColor;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transition: all 0.3s ease;
+}
+
+.customBtn::before {
+    left: -70px;
+    opacity: 0;
+}
+
+.customBtn::after {
+    right: 0px;
+}
+
+.customBtn:hover {
+    padding-right: 0px;
+    padding-left: 70px;
+}
+
+.customBtn:hover::before {
+    opacity: 1;
+    left: 0px;
+}
+
+.customBtn:hover::after {
+    right: -50px;
+    opacity: 0;
+}
+
+.default {
+    color: black !important;
+}
+
+.customBtn__hover:hover {
+    color: var(--primary-color) !important;
+}
+
+.primary {
+    color: white !important;
+}

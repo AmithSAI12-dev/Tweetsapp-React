@@ -4,6 +4,7 @@ import Header from './components/header/Header.component';
 import Home from './page/home/Home.component';
 import Login from './page/login/Login.component';
 import Register from './page/register/Register.component';
+import Footer from './components/footer/Footer.component';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path='/register' element={<Register />} />
         <Route exact path='/' element={<Home />} /> 
       </Routes>
+      <Footer />
     </div>
   );
 }

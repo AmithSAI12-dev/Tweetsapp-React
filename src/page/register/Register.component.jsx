@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { createStructuredSelector } from 'reselect';
 import { registerUserStart } from '../../redux/user/user.actions';
 import { selectErrorMessage, selectSuccessMessage } from '../../redux/user/user.selector';
@@ -58,7 +59,7 @@ class Register extends React.Component {
                         <button type='submit'>sign in</button>
                         <div className="login__help">
                             <p>Already have an account</p>
-                            <p><a href="/">Login here</a></p>
+                            <p><Link to={"/login"}>Login here</Link></p>
                         </div>
                     </form>
                 </div>
