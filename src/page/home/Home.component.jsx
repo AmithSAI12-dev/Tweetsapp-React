@@ -61,7 +61,7 @@ function Home({currentUser, error, fetchTweetStart, fetchMyTweetStart}) {
                         <div className="shop__sortBy">
                             <p onClick={handleClick}>My Tweets</p>
                         </div>
-                        <p>All Tweets</p>
+                        <p onClick={fetchTweetStart}>All Tweets</p>
                         <div className="shop__gridType">
                             <Grid4 className={`${column===4 ? 'active' : ''}`} onClick={() => {
                                     setColumn(4)
@@ -73,7 +73,7 @@ function Home({currentUser, error, fetchTweetStart, fetchMyTweetStart}) {
                 </div>
             </section>
             <section className='container mb-200'>
-                { error!==undefined ? <div className='featured__error'>{error}</div>: ''}
+                { error!==undefined? error!=="User Already Exists" ? <div className='featured__error'>{error}</div>: <div className='featured__error'>Tweet Already Exists</div>: ''}
                 <ProductPreview columns={column} />
                 <div className="mt-100 d-flex justify-content-center">
                     <CustomBtn value="load more" hoverType={true} />

@@ -21,6 +21,22 @@ const tweetsReducer = (state = INITIAL_STATE, action) => {
                 error: action.payload,
                 tweets: []
             }
+        case tweetActionTypes.CREATE_TWEET_START:
+            return {
+                ...state,
+                error: undefined
+            }
+        case tweetActionTypes.CREATE_TWEET_SUCCESS:
+            return {
+                ...state,
+                tweets: state.tweets.concat(action.payload),
+                error: undefined
+            }
+        case tweetActionTypes.CREATE_TWEET_FAILURE:
+            return {
+                ...state,
+                error: action.payload
+            }
         default:
             return state;
     }
