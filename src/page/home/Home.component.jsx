@@ -11,10 +11,10 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from '../../redux/user/user.selector';
 import { fetchTweetStart, fetchMyTweetStart } from '../../redux/tweets/tweets.actions';
-import { selectError } from '../../redux/tweets/tweets.selector';
+import { selectError, selectSuccess } from '../../redux/tweets/tweets.selector';
 
 
-function Home({currentUser, error, fetchTweetStart, fetchMyTweetStart}) {
+function Home({currentUser, error, fetchTweetStart, fetchMyTweetStart, success}) {
     const [column, setColumn] = useState(6);
 
     useEffect(() => { 
@@ -74,6 +74,7 @@ function Home({currentUser, error, fetchTweetStart, fetchMyTweetStart}) {
             </section>
             <section className='container mb-200'>
                 { error!==undefined? error!=="User Already Exists" ? <div className='featured__error'>{error}</div>: <div className='featured__error'>Tweet Already Exists</div>: ''}
+                {success!==undefined ? <div className='featured__error'>{success}</div>: ''}
                 <ProductPreview columns={column} />
                 <div className="mt-100 d-flex justify-content-center">
                     <CustomBtn value="load more" hoverType={true} />
@@ -92,7 +93,8 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  error: selectError
+  error: selectError,
+  success: selectSuccess
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -35,3 +35,34 @@ export const createTweetFailure = error => ({
     payload: error
 })
 
+export const deleteTweetStart = (tweet) => ({
+    type: tweetActionTypes.DELETE_TWEET_START,
+    payload: tweet
+})
+
+export const deleteTweetSuccess = message => ({
+    type: tweetActionTypes.DELETE_TWEET_SUCCESS,
+    payload: message
+})
+
+export const deleteTweetFailure = error => ({
+    type: tweetActionTypes.DELETE_TWEET_FAILURE,
+    payload: error
+})
+
+
+export const updateTweetStart = tweet => ({
+    type: tweetActionTypes.UPDATE_TWEET_START,
+    payload: tweet
+})
+
+
+export const updateTweetSuccess = tweet => ({
+    type: tweetActionTypes.UPDATE_TWEET_SUCCESS,
+    payload: tweet
+})
+
+export const updateTweetFailure = error => ({
+    type: tweetActionTypes.UPDATE_TWEET_FAILURE,
+    payload: error
+})

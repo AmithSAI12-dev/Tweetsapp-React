@@ -1,5 +1,5 @@
 .popup {
-    position: fixed;
+    position: absolute;
     bottom: 50px;
     right: 50px;
     color: white;
@@ -7,6 +7,7 @@
     border-radius: 50%;
     background-color: black;
     cursor: pointer;
+    
 }
 
 .popup > svg {
@@ -20,6 +21,7 @@
     left: 50%;
     margin-top: -250px;  /* Negative half of height. */
     margin-left: -700px;  /* Negative half of width. */
+    z-index: 11111;
 }
 
 .login__form {
