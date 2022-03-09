@@ -19,8 +19,7 @@ export function* updateTweet({payload: {id, tag, message, email}}) {
         })
         yield put(updateTweetSuccess(tweet.data));
     }catch(error) {
-        console.log(error)
-        // yield put(updateTweetFailure(error.response.data.message));
+        yield put(updateTweetFailure(error.response.data.message));
     }
 }
 
@@ -55,7 +54,6 @@ export function* postTweet({payload: {id, tag, message, email}}) {
                 username: email
             }
         });
-
         yield put(createTweetSuccess(tweet.data));
     }catch(error) {
         yield put(createTweetFailure(error.response.data.message));

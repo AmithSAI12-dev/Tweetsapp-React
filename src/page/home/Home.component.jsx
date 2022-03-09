@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import './home.style.css';
 import { ReactComponent as Grid4 } from '../../assets/grid4.svg';
 import { ReactComponent as Grid6 } from '../../assets/grid6.svg';
@@ -28,6 +28,9 @@ function Home({currentUser, error, fetchTweetStart, fetchMyTweetStart, success})
     
     return (
         <>
+            {
+                currentUser==="" ? <Navigate to="/login" /> : ""
+            }
             {/* SHOP HEADER */}
             <section className='shop__header mt-30'>
                 <div className="container d-flex justify-space-between flex-wrap">

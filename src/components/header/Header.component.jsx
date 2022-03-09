@@ -7,10 +7,14 @@ import {ReactComponent as Wishlist} from '../../assets/wishlist.svg';
 import {ReactComponent as Cart} from '../../assets/cart.svg';
 import MobileNav from '../mobile-nav/MobileNav.component';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from '../../redux/user/user.selector';
 
-function Header() {
+function Header({currentUser}) {
     // State to toggle mobile dropdown
     const [open, setOpen] = useState(false);
+    
     return (
         <header className='header'>
             <div className='container'>
@@ -50,7 +54,7 @@ function Header() {
                 {/* Header Icons */}
                 <div className="header__icons">
                     <img src="https://cdn.shopify.com/s/files/1/0274/4293/7933/t/375/assets/club-logo-dark.svg?v=1225262083578130312" alt="Club" />
-                    <Link to='/login'><User /></Link>
+                    { currentUser==="" ? <Link to='/login'><User /></Link> : <a href='/'>Logout</a>}
                     <Wishlist />
                     <Cart />
                 </div>
@@ -60,4 +64,8 @@ function Header() {
     )
 }
 
-export default Header
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser
+})
+
+export default connect(mapStateToProps)(Header)

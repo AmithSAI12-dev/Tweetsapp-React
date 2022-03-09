@@ -46,17 +46,16 @@ const tweetsReducer = (state = INITIAL_STATE, action) => {
                 success: undefined
             }
         case tweetActionTypes.UPDATE_TWEET_SUCCESS:
-            let tweet = state.tweets.filter(i => i.id !== action.payload.id);
-            tweet.concat({
-                id: action.payload.id,
-                message: action.payload.message,
-                tags: action.payload.tags,
-                email: action.payload.email
-            })
+
             return {
                 ...state,
                 error: undefined,
-                tweets: tweet,
+                tweets: state.tweets.map(i => {
+                    if(i.id===action.payload.id) {
+                        return action.payload
+                    }
+                    return i;
+                }),
                 success: action.payload.successMessage
             }
         case tweetActionTypes.DELETE_TWEET_START:
