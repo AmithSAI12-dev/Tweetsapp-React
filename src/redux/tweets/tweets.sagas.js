@@ -81,7 +81,7 @@ export function* getMyTweets({payload: {email}}) {
                 email: email 
             }
         });
-        yield put(fetchTweetStart(tweets.data));
+        yield put(fetchTweetSuccess(tweets.data));
     }catch(error) {
         yield put(fetchTweetFailure(error.response.data.message));
     }
