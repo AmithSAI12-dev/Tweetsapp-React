@@ -6,7 +6,7 @@ import { userActionTypes } from './user.types'
 
 export function* register({payload: {email, password, name}}) {
     try {
-        const user = yield axios.post("http://localhost:8080/api/v1.0/tweets/register", 
+        const user = yield axios.post("http://44.202.81.241:8080/api/v1.0/tweets/register", 
             {            
                 email: email,
                 name: name,
@@ -27,7 +27,7 @@ export function* onRegisterStart() {
 
 export function* login({payload: {email, password}}) {
     try {
-        const user = yield axios.post("http://localhost:8080/api/v1.0/tweets/login", 
+        const user = yield axios.post("http://44.202.81.241:8080/api/v1.0/tweets/login", 
             {            
                 email: email,
                 name: "",
