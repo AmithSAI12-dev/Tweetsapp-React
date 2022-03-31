@@ -6,7 +6,7 @@ import { tweetActionTypes } from './tweets.types'
 
 export function* updateTweet({payload: {id, tag, message, email}}) {
     try {
-        const tweet = yield axios.put("http://44.202.81.241:8080/api/v1.0/tweets/update", {
+        const tweet = yield axios.put("http://54.227.27.85:8080/api/v1.0/tweets/update", {
             id: id,
             tags: tag,
             message: message,
@@ -25,7 +25,7 @@ export function* updateTweet({payload: {id, tag, message, email}}) {
 
 export function* deleteTweet({payload: {id, email}}) {
     try {
-        const tweet = yield axios.delete("http://44.202.81.241:8080/api/v1.0/tweets/delete",
+        const tweet = yield axios.delete("http://54.227.27.85:8080/api/v1.0/tweets/delete",
             {
                 params: {
                     username: email,
@@ -42,7 +42,7 @@ export function* deleteTweet({payload: {id, email}}) {
 
 export function* postTweet({payload: {id, tag, message, email}}) {
     try {
-        const tweet = yield axios.post("http://44.202.81.241:8080/api/v1.0/tweets/add/", 
+        const tweet = yield axios.post("http://54.227.27.85:8080/api/v1.0/tweets/add/", 
         {
             id: id,
             tags: tag,
@@ -62,7 +62,7 @@ export function* postTweet({payload: {id, tag, message, email}}) {
 
 export function* getAllTweets() {
     try {
-        const tweets = yield axios.get("http://44.202.81.241:8080/api/v1.0/tweets/all", {
+        const tweets = yield axios.get("http://54.227.27.85:8080/api/v1.0/tweets/all", {
             params: {
                 page: 0,
                 size: 10
@@ -76,7 +76,7 @@ export function* getAllTweets() {
 
 export function* getMyTweets({payload: {email}}) {
     try {
-        const tweets = yield axios.get("http://44.202.81.241:8080/api/v1.0/tweets/username", {
+        const tweets = yield axios.get("http://54.227.27.85:8080/api/v1.0/tweets/username", {
             params: {
                 email: email 
             }
